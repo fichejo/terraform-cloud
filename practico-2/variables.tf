@@ -1,23 +1,19 @@
-variable "aws_perfil" {
-  default = "mauricio"
-}
-
-variable "aws_region" {
+variable "region" {
   default = "us-east-1"
 }
 
-variable "aws_key_name" {
-  default = "mauricio-pkey"
-}
-
 variable "profile" {
-  default = "default"
+  default = "federico"
 }
 
-variable "cidr" {
+variable "CIDR" {
   default = "172.16.0.0/16"
 }
 
 variable "subnet" {
-  default = "172.16.0.0/16"
+  default = "172.16.1.0/24"
+}
+
+output "dns-publico" {
+  value = aws_instance.terraform-practico2-instance.public_dns
 }
